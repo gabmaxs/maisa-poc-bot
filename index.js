@@ -16,7 +16,7 @@ const init = async () => {
         const response = await axios.get(`${dynacURL}/dynac/mappings`, {headers: {"Accept": "application/json"}})
         if(response.status == 200) {
             Twitter.post("statuses/update", {
-                status: "Maisa-poc is up -> 200 Ok"
+                status: "Yes, Maisa-poc is up -> 200 Ok"
             })
             console.log("tweet postado")
         }
@@ -24,7 +24,7 @@ const init = async () => {
     catch(e) {
         if(e.response.status == 500) {
             Twitter.post("statuses/update", {
-                status: "Maisa-poc is down -> 500 Ok"
+                status: "No, Maisa-poc is down -> 500 Internal Error"
             })
             console.log("tweet postado")
         }
